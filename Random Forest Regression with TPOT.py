@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# Random Forest - example Agreeableness (independent_var) and Product descriptions (dependent_var)
+# Random Forest - X (independent_var) and y (dependent_var)
 
 
 # Import the libraries
@@ -12,9 +12,6 @@ import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import MinMaxScaler
-# from sklearn.externals import joblib
-
 
 
 # Import dataset
@@ -24,11 +21,10 @@ df = pd.read_csv(r"your directory")
 
 
 
-
 # Assigning the input and output values resp. dividing data into attributes and labels
 
-y = df.iloc[0:, 6].values    # Product descriptions (dep_var)
-X = df.iloc[0:, 40].values   # Agreeableness (indep_var)
+y = df.iloc[0:, 6].values    # (dep_var)
+X = df.iloc[0:, 40].values   # (indep_var)
 
 
 y = np.array(y).astype('float')
@@ -156,8 +152,8 @@ y_pred_1
 
 
 #Plot
-plt.plot(y_test, label='Актуални стойности')
-plt.plot(y_pred_1, color="red", label='Прогноза')
+plt.plot(y_test, label='Acutal')
+plt.plot(y_pred_1, color="red", label='Predicted')
 plt.legend()
 plt.show()
 
